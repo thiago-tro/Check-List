@@ -1,0 +1,48 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    background-color: rgb(143, 139, 139);
+    
+}
+header {
+    background-image: linear-gradient(to bottom, rgb(43, 42, 42), black);
+    padding: 15px;
+}
+img {
+    height: 40px;
+    width: 140px;
+}
+main {
+    background-color: white;
+    
+    max-width: 700px;
+    margin: auto;
+    padding: 60px
+}
+form {
+    padding: 20px;
+}
+label {
+    font-weight: bolder;
+}
+input {
+    padding: 5px;
+    border-radius: 4px;
+}
+button {
+    background-image: linear-gradient(to top, #0202b3, #2c2cea);
+    color: white;
+    font-weight: bolder;
+    padding: 3px;
+    border-radius: 4px;
+    box-shadow: 15px, 1px, 1px, black;
+}
+div {
+    margin-top: 15px;
+}
+h1 {
+    font-family:  Arial, Helvetica, sans-serif;
+    color: black;
+}
