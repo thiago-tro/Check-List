@@ -13,6 +13,9 @@
     <title>Check List</title>
 </head>
 <body>
+    <header>
+        <img src="logo.png" alt="logo empresa">
+    </header>
     <main>
         
     <h1>Check List</h1>
