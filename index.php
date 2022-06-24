@@ -42,9 +42,8 @@ include ('conexao.php');
                         foreach($resultado as $result) {
                                 extract($result);
                                 echo "PC:  $cod_pc - $nome_pc";
-                                
                             }
-                            header("location: check_list.php"); 
+                            //header("location: check_list.php"); 
                                                         
 
                     ?>
