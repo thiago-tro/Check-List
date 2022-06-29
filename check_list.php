@@ -1,6 +1,13 @@
 <?php
-    include ('conexao.php');
+    
+    if(!isset($_SESSION)){
+        session_start();
+    }
+    include_once ('conexao.php');
+    
 
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +20,7 @@
     <title>Check List</title>
 </head>
 <body>
+<form method = "POST" action = "check_list.php">
     <header>
         <img src="logo.png" alt="logo empresa">
     </header>
@@ -20,13 +28,34 @@
         
     <h1>Check List</h1>
 
-    <table border="1">
-        <tr><th colspan="2">Zona 1</th></tr><!--itens da zona 1-->
+
+    <?php
+                  /*$busca = trim( $_POST['cod-pc'] );*/
+$pesquisa = $conect->prepare('SELECT * FROM itens WHERE item LIKE :busca');
+$pesquisa->bindParam(':busca', $busca, PDO::PARAM_INT);
+$pesquisa->execute();
+
+$resultado = $pesquisa->fetchAll(PDO::FETCH_ASSOC);
+
+foreach($resultado as $result) {
+        extract($result);
+        echo "PC:  $cod_pc - $nome_pc";
+        
+
+exit;
+
+    }
+
+    ?>
+
+ 
+    <!--<table border="1">
+        <tr><th colspan="2">Zona 1</th></tr><!--itens da zona 1
         <tr>
             <td>CPU</td>
             <td>
                 <select name="status" id="status">
-                    <option value=""></option>
+                    <!--<option value=""></option>->
                     <option value="OK">OK</option>
                     <option value="PD">Pendente</option>
                 </select>
@@ -112,7 +141,7 @@
                 </select>
             </td>
         </tr>
-        <tr><th colspan="2">Zona 2</th></tr><!--itens da zona 2-->
+        <tr><th colspan="2">Zona 2</th></tr><!--itens da zona 2->
         <tr>
             <td>Placa de identificação do Pc</td>
             <td>
@@ -133,7 +162,7 @@
                 </select>
             </td>
         </tr>
-        <tr><th colspan="2">Zona 3</th></tr><!--itns da zona 3-->
+        <tr><th colspan="2">Zona 3</th></tr><!--itns da zona 3->
         <tr>
             <td>Filtro de Ar</td>
             <td>
@@ -224,7 +253,7 @@
                 </select>
             </td>
         </tr>
-        <tr><th colspan="2">Ponto</th></tr><!--itens do ponto-->
+        <tr><th colspan="2">Ponto</th></tr><!--itens do ponto->
         
         <tr>
             <td>Adesivos</td>
@@ -267,7 +296,8 @@
                 </select>
             </td>
         </tr>        
-    </table>
+    </table>-->
+    </form>
     </main>
 </body>
 </html>
