@@ -16,15 +16,36 @@ img {
 }
 main {
     background-color: white;
-    
     max-width: 700px;
     margin: auto;
     padding: 60px
 }
-form {
-    padding: 20px;
+table {
+    border: 1px;
+    border-collapse: collapse;
+    margin: 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: normal;
+    width: 270px;
+}
+caption {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+}
+tbody {
+    border: 1px solid #cccbcb;
+    padding: 5px;
+}
+tbody > tr:nth-child(2n) {
+    background-color: #cccbcb;
+}
+td {
+    padding: 3px;
 }
 label {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bolder;
 }
 input {
@@ -32,11 +53,11 @@ input {
     border-radius: 4px;
 }
 button {
-    background-image: linear-gradient(to top, #0202b3, #2c2cea);
+    background-image: linear-gradient(to top, #0202b3, #292993);
     color: white;
-    
+    border: none;
     font-weight: bolder;
-    padding: 3px;
+    padding: 5px;
     border-radius: 4px;
     box-shadow: 15px, 1px, 1px, black;
 }
@@ -44,6 +65,10 @@ div {
     margin-top: 15px;
 }
 h1 {
-    font-family:  Arial, Helvetica, sans-serif;
+    font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: black;
+    margin-bottom: 25px;
+}
+h4 {
+    margin-bottom: 15px;
 }
