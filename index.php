@@ -2,9 +2,11 @@
 
 if(!isset($_SESSION)){
     session_start();
+   
 }
 
 include ('conexao.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -21,12 +23,14 @@ include ('conexao.php');
 </header>
 <body>
     <main>
-        <h2>Pesquisa:</h2>
+
+        <h1>Pesquisa:</h1>
+        
         <section>
             <form method = "POST" action = "index.php">
 
                 <label>Código do PC:<label>
-                <input type = "int" name = "cod-pc" size = "15" placeholder = "Incira o código do PC">
+                <input type = "int" name = "cod-pc" size = "15" array= "" placeholder = "Incira o código do PC">
                 <button>Buscar</button> 
                 
                 <div>
@@ -35,6 +39,7 @@ include ('conexao.php');
                         //    header("location: check_list.php");
                         //exit;
                         //}
+                       
 
                         $busca = trim( $_POST['cod-pc'] );
 
@@ -46,17 +51,23 @@ include ('conexao.php');
 
                         foreach($resultado as $result) {
                                 extract($result);
-                                echo "PC:  $cod_pc - $nome_pc";
+                                $titulo_pc = "PC:  $cod_pc - $nome_pc";
+                                
+                                
+                                                                
                                 if (isset($_POST['cod-pc'])) {
-                        header("location: check_list.php");
+                                //header("location: check_list.php");
+                                require("check_list.php");
                         exit;
-                        }
-                               # header("location: check_list.php");
-                            }
-                            
-                                                        
+                        } }                         
 
                     ?>
+
+                    <script>
+                       var titulo = "<?php echo $titulo_pc;?>";
+                        
+                    </script>
+
                    <!-- <button><a href="check_list.php">iniciar</a></button> -->
                 </div>
             </form>
